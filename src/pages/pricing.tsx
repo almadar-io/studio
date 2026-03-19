@@ -26,32 +26,32 @@ function Hero() {
 const TIERS = [
   {
     nameId: "pricing.free.name", name: "Free",
-    priceId: "pricing.free.price", price: "$0",
-    periodId: "pricing.free.period", period: "forever",
+    priceId: "pricing.free.price", price: "Coming Soon",
+    periodId: "pricing.free.period", period: "",
     descId: "pricing.free.desc", desc: "For personal projects and learning.",
-    features: ["500 credits", "AI agent access", "Live preview", "Community support"],
-    ctaId: "pricing.free.cta", cta: "Get Started",
-    ctaHref: "https://studio.almadar.io/app",
+    features: ["AI agent access", "Live preview", "Community support"],
+    ctaId: "pricing.free.cta", cta: "Join Waitlist",
+    ctaHref: "mailto:hello@almadar.io",
     highlighted: false,
   },
   {
     nameId: "pricing.pro.name", name: "Pro",
-    priceId: "pricing.pro.price", price: "$29",
-    periodId: "pricing.pro.period", period: "/month",
+    priceId: "pricing.pro.price", price: "Coming Soon",
+    periodId: "pricing.pro.period", period: "",
     descId: "pricing.pro.desc", desc: "For professionals and small teams.",
-    features: ["Unlimited credits", "Priority AI generation", "One-click deploy", "Custom domains", "Email support"],
-    ctaId: "pricing.pro.cta", cta: "Start Pro Trial",
-    ctaHref: "https://studio.almadar.io/app",
+    features: ["Priority AI generation", "One-click deploy", "Custom domains", "Email support"],
+    ctaId: "pricing.pro.cta", cta: "Join Waitlist",
+    ctaHref: "mailto:hello@almadar.io",
     highlighted: true,
   },
   {
     nameId: "pricing.enterprise.name", name: "Enterprise",
-    priceId: "pricing.enterprise.price", price: "Custom",
+    priceId: "pricing.enterprise.price", price: "Coming Soon",
     periodId: "pricing.enterprise.period", period: "",
     descId: "pricing.enterprise.desc", desc: "For organizations with specific requirements.",
     features: ["Dedicated infrastructure", "Custom AI models", "SLA guarantee", "On-premise option", "Dedicated support"],
     ctaId: "pricing.enterprise.cta", cta: "Contact Us",
-    ctaHref: "https://almadar.io/contact",
+    ctaHref: "mailto:hello@almadar.io",
     highlighted: false,
   },
 ];
@@ -103,7 +103,7 @@ export default function Pricing(): ReactNode {
   return (
     <Layout
       title={translate({ id: "pricing.meta.title", message: "Pricing — Almadar Studio" })}
-      description={translate({ id: "pricing.meta.desc", message: "Free for personal projects. Pro at $29/month. Enterprise with custom pricing." })}
+      description={translate({ id: "pricing.meta.desc", message: "Pricing coming soon. Join the waitlist." })}
     >
       <Hero />
       <main>
