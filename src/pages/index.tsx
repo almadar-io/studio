@@ -6,7 +6,6 @@ import Translate, { translate } from "@docusaurus/Translate";
 import {
   HeroSection,
   ContentSection,
-  StepFlow,
   FeatureGrid,
   ShowcaseCard,
   CTABanner,
@@ -18,20 +17,6 @@ import {
 import { DescribeProveDeploy } from "@almadar/ui/illustrations";
 import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
-const STEPS = [
-  {
-    title: translate({ id: "studio.steps.describe.title", message: "Describe" }),
-    description: translate({ id: "studio.steps.describe.desc", message: "Tell the AI what you want to build in plain language. Describe your data, workflows, and UI." }),
-  },
-  {
-    title: translate({ id: "studio.steps.generate.title", message: "Generate" }),
-    description: translate({ id: "studio.steps.generate.desc", message: "The AI agent writes a complete .orb program. The compiler validates every state before a single line of code runs." }),
-  },
-  {
-    title: translate({ id: "studio.steps.deploy.title", message: "Deploy" }),
-    description: translate({ id: "studio.steps.deploy.desc", message: "One click to deploy. Your app is live on Firebase Hosting with a server backend." }),
-  },
-];
 
 const FEATURES = [
   {
@@ -110,9 +95,34 @@ export default function StudioHome(): ReactNode {
               <Translate id="studio.steps.subtitle">From idea to production in three steps</Translate>
             </Typography>
           </VStack>
-          <StepFlow steps={STEPS} orientation="horizontal" showConnectors />
-          <Box className="flex justify-center py-8 opacity-80">
-            <DescribeProveDeploy className="w-full max-w-2xl" />
+          <Box className="w-full max-w-5xl mx-auto py-6">
+            <DescribeProveDeploy className="w-full" />
+            <Box className="flex flex-col sm:flex-row justify-between px-4 sm:px-8 mt-4 gap-6 sm:gap-4">
+              <VStack gap="xs" align="center" className="w-full sm:w-1/3">
+                <Typography variant="h4" align="center">
+                  <Translate id="studio.steps.describe.title">Describe</Translate>
+                </Typography>
+                <Typography variant="caption" color="muted" align="center">
+                  <Translate id="studio.steps.describe.desc">Tell the AI what you want to build in plain language. Describe your data, workflows, and UI.</Translate>
+                </Typography>
+              </VStack>
+              <VStack gap="xs" align="center" className="w-full sm:w-1/3">
+                <Typography variant="h4" align="center">
+                  <Translate id="studio.steps.generate.title">Prove</Translate>
+                </Typography>
+                <Typography variant="caption" color="muted" align="center">
+                  <Translate id="studio.steps.generate.desc">The AI agent writes a complete .orb program. The compiler validates every state before a single line of code runs.</Translate>
+                </Typography>
+              </VStack>
+              <VStack gap="xs" align="center" className="w-full sm:w-1/3">
+                <Typography variant="h4" align="center">
+                  <Translate id="studio.steps.deploy.title">Deploy</Translate>
+                </Typography>
+                <Typography variant="caption" color="muted" align="center">
+                  <Translate id="studio.steps.deploy.desc">One click to deploy. Your app is live on Firebase Hosting with a server backend.</Translate>
+                </Typography>
+              </VStack>
+            </Box>
           </Box>
         </VStack>
       </ContentSection>
