@@ -14,7 +14,7 @@ import {
   Box,
   GradientDivider,
 } from "@almadar/ui/marketing";
-import { DescribeProveDeploy } from "@almadar/ui/illustrations";
+import { AvlStateMachine } from "@almadar/ui/illustrations";
 import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
 
@@ -96,7 +96,7 @@ export default function StudioHome(): ReactNode {
             </Typography>
           </VStack>
           <Box className="w-full max-w-5xl mx-auto py-6">
-            <DescribeProveDeploy className="w-full" />
+            <AvlStateMachine className="w-full" states={[{ name: "Describe", isInitial: true }, { name: "Validate" }, { name: "Compile" }, { name: "Deploy", isTerminal: true }]} transitions={[{ from: "Describe", to: "Validate", event: "SAVE", effects: ["persist"] }, { from: "Validate", to: "Compile", guard: "isValid?", effects: ["render-ui"] }, { from: "Compile", to: "Deploy", effects: ["call-service"] }, { from: "Validate", to: "Describe", event: "FIX" }]} />
             <Box className="flex flex-col sm:flex-row justify-between px-4 sm:px-8 mt-4 gap-6 sm:gap-4">
               <VStack gap="xs" align="center" className="w-full sm:w-1/3">
                 <Typography variant="h4" align="center">
