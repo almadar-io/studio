@@ -15,6 +15,7 @@ import {
   Box,
   GradientDivider,
 } from "@almadar/ui/marketing";
+import { DescribeProveDeploy } from "@almadar/ui/illustrations";
 import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
 const STEPS = [
@@ -110,6 +111,9 @@ export default function StudioHome(): ReactNode {
             </Typography>
           </VStack>
           <StepFlow steps={STEPS} orientation="horizontal" showConnectors />
+          <Box className="flex justify-center py-8 opacity-80">
+            <DescribeProveDeploy className="w-full max-w-2xl" />
+          </Box>
         </VStack>
       </ContentSection>
 
