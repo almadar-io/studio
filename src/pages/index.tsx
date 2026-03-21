@@ -89,13 +89,12 @@ export default function StudioHome(): ReactNode {
       description={translate({ id: "studio.meta.description", message: "Almadar Studio - Describe what you want, get a working application. AI-powered software builder." })}
     >
       <HeroSection
+        tag={translate({ id: "studio.hero.tag", message: "AI Builder" })}
         title={translate({ id: "studio.hero.title.prefix", message: "Build Software" })}
         titleAccent={translate({ id: "studio.hero.title.accent", message: "with AI" })}
         subtitle={translate({ id: "studio.hero.subtitle", message: "Describe what you want. Get a working application. Edit, preview, deploy." })}
         primaryAction={{ label: translate({ id: "studio.hero.cta.start", message: "Start Building" }), href: "https://kflow-builder-app.web.app/" }}
         secondaryAction={{ label: translate({ id: "studio.hero.cta.features", message: "See Features" }), href: "/features" }}
-        image={{ src: "/img/screenshots/builder-home-page.png", alt: "Almadar Studio AI Builder" }}
-        imagePosition="below"
       />
 
       <ContentSection>
