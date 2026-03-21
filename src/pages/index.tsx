@@ -15,6 +15,7 @@ import {
   Box,
   GradientDivider,
 } from "@almadar/ui/marketing";
+import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
 const STEPS = [
   {
@@ -95,6 +96,7 @@ export default function StudioHome(): ReactNode {
         subtitle={translate({ id: "studio.hero.subtitle", message: "Describe what you want. Get a working application. Edit, preview, deploy." })}
         primaryAction={{ label: translate({ id: "studio.hero.cta.start", message: "Start Building" }), href: "https://kflow-builder-app.web.app/" }}
         secondaryAction={{ label: translate({ id: "studio.hero.cta.features", message: "See Features" }), href: "/features" }}
+        backgroundElement={<OrbitalHeroBackground />}
       />
 
       <ContentSection>
