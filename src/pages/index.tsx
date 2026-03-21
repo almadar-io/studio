@@ -13,6 +13,7 @@ import {
   VStack,
   Typography,
   Box,
+  GradientDivider,
 } from "@almadar/ui/marketing";
 
 const STEPS = [
@@ -66,15 +67,18 @@ const FEATURES = [
 const SHOWCASE_ITEMS = [
   {
     title: translate({ id: "studio.showcase.hq", message: "HQ & Domain Story" }),
-    image: "/img/screenshots/builder-hq.png",
+    image: { src: "/img/screenshots/builder-hq.png", alt: "HQ & Domain Story view" },
+    description: translate({ id: "studio.showcase.hq.desc", message: "Manage your project from a single dashboard with domain context." }),
   },
   {
     title: translate({ id: "studio.showcase.viz", message: "Orbital Graph" }),
-    image: "/img/screenshots/builder-viz.png",
+    image: { src: "/img/screenshots/builder-viz.png", alt: "Orbital Graph visualization" },
+    description: translate({ id: "studio.showcase.viz.desc", message: "Visualize entity relationships and state machine flows." }),
   },
   {
     title: translate({ id: "studio.showcase.build", message: "Schema Editor" }),
-    image: "/img/screenshots/builder-build.png",
+    image: { src: "/img/screenshots/builder-build.png", alt: "Schema Editor interface" },
+    description: translate({ id: "studio.showcase.build.desc", message: "Edit .orb programs with full syntax highlighting and validation." }),
   },
 ];
 
@@ -121,6 +125,8 @@ export default function StudioHome(): ReactNode {
           <FeatureGrid items={FEATURES} columns={3} />
         </VStack>
       </ContentSection>
+
+      <GradientDivider />
 
       <ContentSection>
         <VStack gap="lg" align="center" className="container">

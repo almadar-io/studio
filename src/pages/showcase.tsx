@@ -7,6 +7,7 @@ import {
   FeatureGrid,
   CTABanner,
   ContentSection,
+  GradientDivider,
 } from "@almadar/ui/marketing";
 
 const PROJECTS = [
@@ -47,6 +48,7 @@ export default function Showcase(): ReactNode {
         title={translate({ id: "showcase.hero.title", message: "Showcase" })}
         subtitle={translate({ id: "showcase.hero.subtitle", message: "Real projects built with Almadar Studio and deployed to production." })}
       />
+      <GradientDivider />
       <ContentSection>
         <FeatureGrid items={PROJECTS} columns={3} />
       </ContentSection>
