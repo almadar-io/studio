@@ -19,7 +19,7 @@ const FEATURES = [
       translate({ id: "features.agent.b2", message: "Domain-aware generation" }),
       translate({ id: "features.agent.b3", message: "Iterative refinement through conversation" }),
     ],
-    screenshot: "/img/screenshots/builder-hq.png",
+    screenshot: "/img/screenshots/builder-home-page.png",
   },
   {
     tag: translate({ id: "features.editor.tag", message: "Editing" }),
@@ -30,7 +30,7 @@ const FEATURES = [
       translate({ id: "features.editor.b2", message: "Monaco code editor with .orb syntax" }),
       translate({ id: "features.editor.b3", message: "Real-time validation as you type" }),
     ],
-    screenshot: "/img/screenshots/builder-build.png",
+    screenshot: "/img/screenshots/builder-detail-build-page.png",
   },
   {
     tag: translate({ id: "features.git.tag", message: "Version Control" }),
@@ -41,7 +41,7 @@ const FEATURES = [
       translate({ id: "features.git.b2", message: "Visual diff viewer" }),
       translate({ id: "features.git.b3", message: "One-click rollback" }),
     ],
-    screenshot: "/img/screenshots/builder-templates-studioprojecttemplate--build-mode-schema.png",
+    screenshot: "/img/screenshots/builder-detail-page.png",
   },
   {
     tag: translate({ id: "features.preview.tag", message: "Development" }),
@@ -52,7 +52,7 @@ const FEATURES = [
       translate({ id: "features.preview.b2", message: "Hot reload on schema changes" }),
       translate({ id: "features.preview.b3", message: "Mobile and desktop preview" }),
     ],
-    screenshot: "/img/screenshots/builder-viz.png",
+    screenshot: "/img/screenshots/builder-detail-build-visualization-page.png",
   },
   {
     tag: translate({ id: "features.deploy.tag", message: "Deployment" }),
@@ -63,7 +63,7 @@ const FEATURES = [
       translate({ id: "features.deploy.b2", message: "Automatic SSL and CDN" }),
       translate({ id: "features.deploy.b3", message: "Server backend included" }),
     ],
-    screenshot: "/img/screenshots/builder-templates-previewdashboardtemplate--default.png",
+    screenshot: "/img/screenshots/builder-detail-preview-page.png",
   },
   {
     tag: translate({ id: "features.collab.tag", message: "Collaboration" }),
@@ -74,7 +74,7 @@ const FEATURES = [
       translate({ id: "features.collab.b2", message: "Role-based access control" }),
       translate({ id: "features.collab.b3", message: "Change review workflow" }),
     ],
-    screenshot: "/img/screenshots/builder-templates-workspacetemplate--default.png",
+    screenshot: "/img/screenshots/builder-agent.png",
   },
 ];
 
