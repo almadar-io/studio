@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Studio AVL Icon: D orbital clover with Agent/Editor/Preview/Deploy trait rings -->
+<svg width="64" height="64" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="studioAvlGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#48cae4" />
+      <stop offset="100%" stop-color="#0077b6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Orbital boundary -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#studioAvlGrad)" stroke-width="2" />
+  <circle cx="100" cy="100" r="70" fill="#0096c7" opacity="0.03" />
+  <text x="100" y="22" text-anchor="middle" fill="#0096c7" font-size="11" font-weight="bold">Studio</text>
+
+  <!-- Trait: Agent (rotation 0) -->
+  <g opacity="0.6" transform="rotate(0,100,100)">
+    <ellipse cx="100" cy="100" rx="45" ry="20" fill="none" stroke="#0096c7" stroke-width="1.5" stroke-dasharray="4 2" />
+  </g>
+  <!-- Trait: Editor (rotation 45) -->
+  <g opacity="0.6" transform="rotate(45,100,100)">
+    <ellipse cx="100" cy="100" rx="55" ry="24" fill="none" stroke="#0096c7" stroke-width="1.5" stroke-dasharray="4 2" />
+  </g>
+  <!-- Trait: Preview (rotation 90) -->
+  <g opacity="0.6" transform="rotate(90,100,100)">
+    <ellipse cx="100" cy="100" rx="45" ry="20" fill="none" stroke="#0096c7" stroke-width="1.5" stroke-dasharray="4 2" />
+  </g>
+  <!-- Trait: Deploy (rotation 135) -->
+  <g opacity="0.6" transform="rotate(135,100,100)">
+    <ellipse cx="100" cy="100" rx="55" ry="24" fill="none" stroke="#0096c7" stroke-width="1.5" stroke-dasharray="4 2" />
+  </g>
+
+  <!-- Entity nucleus -->
+  <circle cx="100" cy="100" r="16" fill="#0096c7" opacity="0.15" />
+  <circle cx="100" cy="100" r="16" fill="none" stroke="url(#studioAvlGrad)" stroke-width="2.5" />
+  <!-- Field lines -->
+  <line x1="100" y1="82" x2="100" y2="76" stroke="#0096c7" stroke-width="1" opacity="0.6" />
+  <line x1="114" y1="92" x2="118" y2="88" stroke="#0096c7" stroke-width="1" opacity="0.6" />
+  <line x1="114" y1="108" x2="118" y2="112" stroke="#0096c7" stroke-width="1" opacity="0.6" />
+</svg>
