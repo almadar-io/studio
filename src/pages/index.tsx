@@ -1,7 +1,6 @@
 import React from "react";
 import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import Translate, { translate } from "@docusaurus/Translate";
 import {
   HeroSection,
@@ -169,20 +168,29 @@ export default function StudioHome(): ReactNode {
         <VStack gap="lg" align="center" className="container">
           <VStack gap="sm" align="center">
             <Typography variant="h2">
-              <Translate id="studio.tryit.title">Try It Live</Translate>
+              <Translate id="studio.loop.title">Edit at Any Level</Translate>
             </Typography>
-            <Typography variant="body" color="muted">
-              <Translate id="studio.tryit.subtitle">Describe an app idea and watch the AI generate a complete .orb program</Translate>
+            <Typography variant="body" color="muted" className="max-w-2xl">
+              <Translate id="studio.loop.subtitle">Change the description, the .orb program, or the generated code. Fixes propagate across layers. The AI can go from English to Orb, from Orb to code, and from code back to a readable spec.</Translate>
             </Typography>
           </VStack>
-          <Box className="flex justify-center py-4">
-            <BrowserOnly fallback={<Typography variant="body" color="muted">Loading builder...</Typography>}>
-              {() => {
-                const { AlmadarBuilder } = require("@site/src/components/AlmadarBuilder");
-                return <AlmadarBuilder />;
-              }}
-            </BrowserOnly>
-          </Box>
+          <FeatureGrid items={[
+            {
+              icon: "message-square",
+              title: translate({ id: "studio.loop.describe", message: "Describe" }),
+              description: translate({ id: "studio.loop.describe.desc", message: "Write what you want in plain English. The AI generates a complete .orb program." }),
+            },
+            {
+              icon: "code-2",
+              title: translate({ id: "studio.loop.orb", message: "Orb Program" }),
+              description: translate({ id: "studio.loop.orb.desc", message: "Edit the formal model directly. The compiler verifies every change before code is generated." }),
+            },
+            {
+              icon: "file-code",
+              title: translate({ id: "studio.loop.code", message: "Generated Code" }),
+              description: translate({ id: "studio.loop.code.desc", message: "Production-ready TypeScript. Regenerated from the .orb model on every change." }),
+            },
+          ]} columns={3} />
         </VStack>
       </ContentSection>
 
