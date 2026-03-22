@@ -6,7 +6,6 @@ import {
   HeroSection,
   ContentSection,
   FeatureGrid,
-  ShowcaseCard,
   CTABanner,
   VStack,
   Typography,
@@ -52,19 +51,34 @@ const FEATURES = [
 
 const SHOWCASE_ITEMS = [
   {
-    title: translate({ id: "studio.showcase.hq", message: "HQ & Domain Story" }),
-    image: { src: "/img/screenshots/builder-hq.png", alt: "HQ & Domain Story view" },
-    description: translate({ id: "studio.showcase.hq.desc", message: "Manage your project from a single dashboard with domain context." }),
+    title: translate({ id: "studio.showcase.home", message: "Project Dashboard" }),
+    image: { src: "/img/screenshots/builder-home-page.png", alt: "Project dashboard" },
+    description: translate({ id: "studio.showcase.home.desc", message: "All your projects in one place. Create, manage, and deploy." }),
   },
   {
-    title: translate({ id: "studio.showcase.viz", message: "Orbital Graph" }),
-    image: { src: "/img/screenshots/builder-viz.png", alt: "Orbital Graph visualization" },
-    description: translate({ id: "studio.showcase.viz.desc", message: "Visualize entity relationships and state machine flows." }),
+    title: translate({ id: "studio.showcase.agent", message: "AI Agent" }),
+    image: { src: "/img/screenshots/builder-agent.png", alt: "AI Agent chat" },
+    description: translate({ id: "studio.showcase.agent.desc", message: "Describe what you want. The AI writes a complete .orb program." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.detail", message: "Project Detail" }),
+    image: { src: "/img/screenshots/builder-detail-page.png", alt: "Project detail view" },
+    description: translate({ id: "studio.showcase.detail.desc", message: "Full project overview with schema, history, and deployment status." }),
   },
   {
     title: translate({ id: "studio.showcase.build", message: "Schema Editor" }),
-    image: { src: "/img/screenshots/builder-build.png", alt: "Schema Editor interface" },
+    image: { src: "/img/screenshots/builder-detail-build-page.png", alt: "Schema editor" },
     description: translate({ id: "studio.showcase.build.desc", message: "Edit .orb programs with full syntax highlighting and validation." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.viz", message: "Orbital Visualization" }),
+    image: { src: "/img/screenshots/builder-detail-build-visualization-page.png", alt: "Orbital graph visualization" },
+    description: translate({ id: "studio.showcase.viz.desc", message: "Visualize entity relationships and state machine flows." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.preview", message: "Live Preview" }),
+    image: { src: "/img/screenshots/builder-detail-preview-page.png", alt: "Live preview" },
+    description: translate({ id: "studio.showcase.preview.desc", message: "See your app running in real time as you build." }),
   },
 ];
 
@@ -152,13 +166,27 @@ export default function StudioHome(): ReactNode {
               <Translate id="studio.showcase.subtitle">Real screenshots from Almadar Studio</Translate>
             </Typography>
           </VStack>
-          <Box className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
             {SHOWCASE_ITEMS.map((item) => (
-              <ShowcaseCard
+              <Box
                 key={item.title}
-                title={item.title}
-                image={item.image}
-              />
+                className="group rounded-xl overflow-hidden bg-[var(--color-surface)] border border-[var(--color-border)] shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1"
+              >
+                <Box
+                  className="w-full aspect-video bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${item.image.src})` }}
+                  role="img"
+                  aria-label={item.image.alt}
+                />
+                <Box className="p-5">
+                  <Typography variant="h4" className="mb-1">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="caption" color="muted">
+                    {item.description}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
           </Box>
         </VStack>
