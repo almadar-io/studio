@@ -2,7 +2,9 @@ import React from "react";
 import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
-import { HeroSection, PricingGrid, ContentSection } from "@almadar/ui/marketing";
+import { HeroSection, PricingGrid, ContentSection, Box } from "@almadar/ui/marketing";
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const PLANS = [
   {
@@ -64,6 +66,19 @@ export default function Pricing(): ReactNode {
       <HeroSection
         title={translate({ id: "pricing.hero.title", message: "Pricing" })}
         subtitle={translate({ id: "pricing.hero.subtitle", message: "Start free. Scale when you need to. Reach out for custom and enterprise solutions." })}
+        className="!overflow-visible"
+        backgroundElement={
+          <Box className="absolute right-8 top-[10%] w-full max-w-[320px] pointer-events-none hidden lg:flex items-start">
+            <ThemedImage
+              alt="Studio Page Vector"
+              sources={{
+                light: useBaseUrl('/img/illustrations/Page-light.svg'),
+                dark: useBaseUrl('/img/illustrations/Page-dark.svg'),
+              }}
+              className="w-full opacity-90 drop-shadow-lg "
+            />
+          </Box>
+        }
       />
       <ContentSection>
         <PricingGrid plans={PLANS} />

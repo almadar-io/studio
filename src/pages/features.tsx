@@ -7,7 +7,10 @@ import {
   SplitSection,
   CTABanner,
   ContentSection,
+  Box,
 } from "@almadar/ui/marketing";
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const FEATURES = [
   {
@@ -87,6 +90,19 @@ export default function Features(): ReactNode {
       <HeroSection
         title={translate({ id: "features.hero.title", message: "Features" })}
         subtitle={translate({ id: "features.hero.subtitle", message: "Everything you need to build, preview, and deploy full-stack applications." })}
+        className="!overflow-visible"
+        backgroundElement={
+          <Box className="absolute right-8 top-[10%] w-full max-w-[380px] pointer-events-none hidden lg:flex items-start">
+            <ThemedImage
+              alt="Studio Organic Trait"
+              sources={{
+                light: useBaseUrl('/img/illustrations/Trait-light.svg'),
+                dark: useBaseUrl('/img/illustrations/Trait-dark.svg'),
+              }}
+              className="w-full opacity-90 drop-shadow-2xl "
+            />
+          </Box>
+        }
       />
 
       {FEATURES.map((feature, idx) => (

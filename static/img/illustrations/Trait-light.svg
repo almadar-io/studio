@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+    <!-- Visual Editor UI (Left) -->
+    <rect x="100" y="150" width="280" height="300" rx="12" fill="#edf6f9" stroke="#0077b6" stroke-width="2"/>
+    <rect x="120" y="170" width="240" height="100" rx="8" fill="#0077b6" opacity="0.1" stroke="#0077b6" stroke-width="1"/>
+    <rect x="140" y="190" width="100" height="15" rx="4" fill="#0a2540" opacity="0.8"/>
+    <rect x="140" y="220" width="150" height="10" rx="4" fill="#0a2540" opacity="0.4"/>
+    <rect x="140" y="240" width="80" height="10" rx="4" fill="#0a2540" opacity="0.4"/>
+    <circle cx="320" cy="225" r="20" fill="#edf6f9" stroke="#00b4d8" stroke-width="2"/>
+    
+    <rect x="120" y="290" width="110" height="140" rx="8" fill="#edf6f9" stroke="#0a2540" stroke-width="1" opacity="0.5"/>
+    <rect x="250" y="290" width="110" height="140" rx="8" fill="#edf6f9" stroke="#0a2540" stroke-width="1" opacity="0.5"/>
+    
+    <line x1="380" y1="300" x2="420" y2="300" stroke="#00b4d8" stroke-width="3" stroke-dasharray="5 5" filter="url(#glow)"/>
+
+    <!-- Syntax/Code (Right) -->
+    <rect x="420" y="150" width="280" height="300" rx="12" fill="#edf6f9" stroke="#00b4d8" stroke-width="2"/>
+    <g transform="translate(440, 180)" fill="#0a2540">
+      <rect x="0" y="0" width="80" height="8" rx="2" fill="#0077b6"/>
+      <rect x="20" y="20" width="120" height="8" rx="2" fill="#0077b6"/>
+      <rect x="40" y="40" width="160" height="8" rx="2" fill="#00b4d8"/>
+      <rect x="40" y="60" width="140" height="8" rx="2" opacity="0.6"/>
+      <rect x="20" y="80" width="60" height="8" rx="2" fill="#0077b6"/>
+      <rect x="0" y="120" width="100" height="8" rx="2" fill="#0077b6"/>
+      <rect x="20" y="140" width="180" height="8" rx="2" opacity="0.6"/>
+      <rect x="20" y="160" width="140" height="8" rx="2" fill="#00b4d8"/>
+      <rect x="40" y="180" width="200" height="8" rx="2" fill="#0077b6"/>
+      <rect x="20" y="200" width="100" height="8" rx="2" opacity="0.6"/>
+    </g>
+  
+</svg>
