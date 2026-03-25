@@ -2,7 +2,17 @@ import React from "react";
 import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
-import { HeroSection, PricingGrid, ContentSection, Box } from "@almadar/ui/marketing";
+import {
+  Box,
+  VStack,
+  HStack,
+  Typography,
+  Button,
+  Badge,
+  Icon,
+  Card,
+  SimpleGrid,
+} from "@almadar/ui/marketing";
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -63,26 +73,63 @@ export default function Pricing(): ReactNode {
       title={translate({ id: "pricing.meta.title", message: "Pricing — Almadar Studio" })}
       description={translate({ id: "pricing.meta.desc", message: "Pricing coming soon. Join the waitlist." })}
     >
-      <HeroSection
-        title={translate({ id: "pricing.hero.title", message: "Pricing" })}
-        subtitle={translate({ id: "pricing.hero.subtitle", message: "Start free. Scale when you need to. Reach out for custom and enterprise solutions." })}
-        className="!overflow-visible"
-        backgroundElement={
-          <Box className="absolute right-8 top-[10%] w-full max-w-[320px] pointer-events-none hidden lg:flex items-start">
-            <ThemedImage
-              alt="Studio Page Vector"
-              sources={{
-                light: useBaseUrl('/img/illustrations/Page-light.svg'),
-                dark: useBaseUrl('/img/illustrations/Page-dark.svg'),
-              }}
-              className="w-full opacity-90 drop-shadow-lg "
-            />
-          </Box>
-        }
-      />
-      <ContentSection>
-        <PricingGrid plans={PLANS} />
-      </ContentSection>
+      {/* Hero with image on right */}
+      <Box as="header" className="w-full flex items-center">
+        <Box className="site-container py-20">
+          <HStack gap="xl" className="flex-col lg:flex-row items-center">
+            <Box className="flex-1">
+              <VStack gap="lg" align="start">
+                <Typography variant="h1">{translate({ id: "pricing.hero.title", message: "Pricing" })}</Typography>
+                <Typography variant="body1" color="muted">{translate({ id: "pricing.hero.subtitle", message: "Start free. Scale when you need to. Reach out for custom and enterprise solutions." })}</Typography>
+              </VStack>
+            </Box>
+            <Box className="flex-1 max-w-[300px] hidden lg:flex">
+              <ThemedImage
+                alt="Studio Page Vector"
+                sources={{
+                  light: useBaseUrl('/img/illustrations/Page-light.svg'),
+                  dark: useBaseUrl('/img/illustrations/Page-dark.svg'),
+                }}
+                className="w-full drop-shadow-2xl"
+              />
+            </Box>
+          </HStack>
+        </Box>
+      </Box>
+
+      {/* Pricing cards */}
+      <Box className="w-full">
+        <Box className="site-container py-24">
+          <SimpleGrid cols={3} gap="lg">
+            {PLANS.map((plan) => (
+              <Card
+                key={plan.name}
+                className={`p-6 ${plan.highlighted ? "border-2 border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20" : ""}`}
+              >
+                <VStack gap="md">
+                  {plan.highlighted && <Badge variant="primary">Popular</Badge>}
+                  <Typography variant="h3">{plan.name}</Typography>
+                  <Typography variant="h2">{plan.price}</Typography>
+                  <Typography variant="body2" color="muted">{plan.description}</Typography>
+                  <VStack gap="sm">
+                    {plan.features.map((f) => (
+                      <HStack key={f} gap="sm" align="center">
+                        <Icon name="check" size={16} className="text-[var(--color-primary)] shrink-0" />
+                        <Typography variant="body2">{f}</Typography>
+                      </HStack>
+                    ))}
+                  </VStack>
+                  <a href={plan.action.href}>
+                    <Button variant={plan.highlighted ? "primary" : "secondary"} size="lg" className="w-full">
+                      {plan.action.label}
+                    </Button>
+                  </a>
+                </VStack>
+              </Card>
+            ))}
+          </SimpleGrid>
+        </Box>
+      </Box>
     </Layout>
   );
 }

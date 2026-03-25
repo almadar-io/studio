@@ -3,11 +3,14 @@ import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import {
-  HeroSection,
-  SplitSection,
-  CTABanner,
-  ContentSection,
   Box,
+  VStack,
+  HStack,
+  Typography,
+  Button,
+  Badge,
+  Icon,
+  Divider,
 } from "@almadar/ui/marketing";
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -87,42 +90,102 @@ export default function Features(): ReactNode {
       title={translate({ id: "features.meta.title", message: "Features — Almadar Studio" })}
       description={translate({ id: "features.meta.desc", message: "AI Agent, Visual Editor, Git History, Live Preview, One-Click Deploy, and Team Collaboration." })}
     >
-      <HeroSection
-        title={translate({ id: "features.hero.title", message: "Features" })}
-        subtitle={translate({ id: "features.hero.subtitle", message: "Everything you need to build, preview, and deploy full-stack applications." })}
-        className="!overflow-visible"
-        backgroundElement={
-          <Box className="absolute right-8 top-[10%] w-full max-w-[380px] pointer-events-none hidden lg:flex items-start">
-            <ThemedImage
-              alt="Studio Organic Trait"
-              sources={{
-                light: useBaseUrl('/img/illustrations/Trait-light.svg'),
-                dark: useBaseUrl('/img/illustrations/Trait-dark.svg'),
-              }}
-              className="w-full opacity-90 drop-shadow-2xl "
-            />
+      {/* Hero */}
+      <Box as="header" className="w-full">
+        <Box className="site-container py-24">
+          <VStack gap="lg" align="center">
+            <Badge variant="primary">{translate({ id: "features.hero.badge", message: "Studio Features" })}</Badge>
+            <Typography variant="h1" align="center">
+              {translate({ id: "features.hero.title", message: "Everything you need to build" })}
+            </Typography>
+            <Typography variant="body1" color="muted" align="center" className="max-w-2xl">
+              {translate({ id: "features.hero.subtitle", message: "From AI-powered generation to one-click deploy. Six capabilities that take you from idea to production." })}
+            </Typography>
+            <HStack gap="md">
+              <a href="https://studio.almadar.io/app">
+                <Button variant="primary" size="lg">
+                  {translate({ id: "features.hero.cta1", message: "Start Building" })}
+                </Button>
+              </a>
+              <a href="#features">
+                <Button variant="secondary" size="lg">
+                  {translate({ id: "features.hero.cta2", message: "See All Features" })}
+                </Button>
+              </a>
+            </HStack>
+          </VStack>
+        </Box>
+      </Box>
+
+      {/* Feature sections */}
+      <Box id="features">
+        {FEATURES.map((feature, idx) => (
+          <Box key={feature.title} className={`w-full ${idx % 2 === 1 ? "bg-[var(--color-surface)]" : ""}`}>
+            <Box className="site-container py-16">
+              <VStack gap="xl">
+                {/* Screenshot - full width, prominent */}
+                <Box
+                  className="w-full rounded-xl overflow-hidden border border-[var(--color-border)]"
+                  style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}
+                >
+                  <Box
+                    className="w-full bg-cover bg-top bg-no-repeat"
+                    style={{
+                      backgroundImage: `url(${feature.screenshot})`,
+                      paddingBottom: '52%',
+                    }}
+                    role="img"
+                    aria-label={feature.title}
+                  />
+                </Box>
+
+                {/* Text content below screenshot */}
+                <HStack gap="xl" className="flex-col lg:flex-row items-start">
+                  <VStack gap="sm" className="flex-1">
+                    <Badge variant="primary">{feature.tag}</Badge>
+                    <Typography variant="h2">{feature.title}</Typography>
+                    <Typography variant="body1" color="muted">{feature.description}</Typography>
+                  </VStack>
+                  <VStack gap="sm" className="flex-1 lg:pt-8">
+                    {feature.bullets.map((bullet) => (
+                      <HStack key={bullet} gap="sm" align="center" className="py-2">
+                        <Box className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center shrink-0">
+                          <Icon name="check" size={14} className="text-[var(--color-primary)]" />
+                        </Box>
+                        <Typography variant="body1">{bullet}</Typography>
+                      </HStack>
+                    ))}
+                  </VStack>
+                </HStack>
+              </VStack>
+            </Box>
+            {idx < FEATURES.length - 1 && (
+              <Box className="site-container">
+                <Divider />
+              </Box>
+            )}
           </Box>
-        }
-      />
+        ))}
+      </Box>
 
-      {FEATURES.map((feature, idx) => (
-        <ContentSection key={feature.title} background={idx % 2 === 1 ? "alt" : "default"}>
-          <SplitSection
-            title={feature.title}
-            description={feature.description}
-            bullets={feature.bullets}
-            image={{ src: feature.screenshot, alt: feature.title }}
-            imagePosition={idx % 2 === 1 ? "left" : "right"}
-          />
-        </ContentSection>
-      ))}
-
-      <CTABanner
-        title={translate({ id: "features.cta.title", message: "Ready to Build?" })}
-        subtitle={translate({ id: "features.cta.text", message: "Create your first application in minutes. Free to start." })}
-        primaryAction={{ label: translate({ id: "features.cta.button", message: "Open Studio" }), href: "https://studio.almadar.io/app" }}
-        background="primary"
-      />
+      {/* CTA */}
+      <Box className="w-full py-24">
+        <Box className="site-container">
+          <VStack gap="lg" align="center">
+            <Typography variant="h2" align="center">
+              {translate({ id: "features.cta.title", message: "Ready to Build?" })}
+            </Typography>
+            <Typography variant="body1" color="muted" align="center">
+              {translate({ id: "features.cta.text", message: "Create your first application in minutes. Free to start." })}
+            </Typography>
+            <a href="https://studio.almadar.io/app">
+              <Button variant="primary" size="lg">
+                {translate({ id: "features.cta.button", message: "Open Studio" })}
+              </Button>
+            </a>
+          </VStack>
+        </Box>
+      </Box>
     </Layout>
   );
 }
