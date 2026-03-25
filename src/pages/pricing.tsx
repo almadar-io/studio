@@ -104,9 +104,9 @@ export default function Pricing(): ReactNode {
             {PLANS.map((plan) => (
               <Card
                 key={plan.name}
-                className={`p-6 ${plan.highlighted ? "border-2 border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20" : ""}`}
+                className={`p-6 flex flex-col h-full ${plan.highlighted ? "border-2 border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20" : ""}`}
               >
-                <VStack gap="md">
+                <VStack gap="md" className="flex-1">
                   {plan.highlighted && <Badge variant="primary">Popular</Badge>}
                   <Typography variant="h3">{plan.name}</Typography>
                   <Typography variant="h2">{plan.price}</Typography>
@@ -119,12 +119,14 @@ export default function Pricing(): ReactNode {
                       </HStack>
                     ))}
                   </VStack>
+                </VStack>
+                <Box className="mt-auto pt-6">
                   <a href={plan.action.href}>
                     <Button variant={plan.highlighted ? "primary" : "secondary"} size="lg" className="w-full">
                       {plan.action.label}
                     </Button>
                   </a>
-                </VStack>
+                </Box>
               </Card>
             ))}
           </SimpleGrid>

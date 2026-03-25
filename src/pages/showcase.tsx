@@ -18,6 +18,7 @@ const PROJECTS = [
   {
     title: translate({ id: "showcase.inspection.title", message: "Inspection System" }),
     description: translate({ id: "showcase.inspection.desc", message: "Field inspection platform for industrial compliance. Scheduling, checklists, photo evidence, PDF reports, and real-time status tracking." }),
+    screenshot: "/img/screenshots/projects/inspection-system.png",
   },
   {
     title: translate({ id: "showcase.traitwars.title", message: "Trait Wars" }),
@@ -26,16 +27,38 @@ const PROJECTS = [
   {
     title: translate({ id: "showcase.knowledge.title", message: "Knowledge Platform" }),
     description: translate({ id: "showcase.knowledge.desc", message: "Structured knowledge management with collections, articles, quizzes, and progress tracking. Multi-tenant with role-based access." }),
+    screenshot: "/img/screenshots/projects/kflow.png",
   },
   {
     title: translate({ id: "showcase.blazklemenc.title", message: "Blazklemenc" }),
     description: translate({ id: "showcase.blazklemenc.desc", message: "Professional portfolio and booking system for a personal training business. Scheduling, payments, and client management." }),
+    screenshot: "/img/screenshots/projects/blazklemenc.png",
   },
   {
     title: translate({ id: "showcase.winning11.title", message: "Winning-11" }),
     description: translate({ id: "showcase.winning11.desc", message: "Football team management app with player stats, match scheduling, formation builder, and tournament brackets." }),
   },
 ];
+
+function ProjectCard({ project }: { project: (typeof PROJECTS)[number] }): ReactNode {
+  const resolvedUrl = useBaseUrl(project.screenshot ?? "");
+  const screenshotUrl = project.screenshot ? resolvedUrl : null;
+  return (
+    <Card className="overflow-hidden border border-[var(--color-border)]">
+      {screenshotUrl && (
+        <img
+          src={screenshotUrl}
+          alt={project.title}
+          className="w-full h-48 object-cover object-top border-b border-[var(--color-border)]"
+        />
+      )}
+      <VStack gap="sm" className="p-6">
+        <Typography variant="h4">{project.title}</Typography>
+        <Typography variant="body2" color="muted">{project.description}</Typography>
+      </VStack>
+    </Card>
+  );
+}
 
 export default function Showcase(): ReactNode {
   return (
@@ -72,12 +95,7 @@ export default function Showcase(): ReactNode {
         <Box className="site-container py-24">
           <SimpleGrid cols={3} gap="lg">
             {PROJECTS.map((project) => (
-              <Card key={project.title} className="p-6 border border-[var(--color-border)]">
-                <VStack gap="sm">
-                  <Typography variant="h4">{project.title}</Typography>
-                  <Typography variant="body2" color="muted">{project.description}</Typography>
-                </VStack>
-              </Card>
+              <ProjectCard key={project.title} project={project} />
             ))}
           </SimpleGrid>
         </Box>

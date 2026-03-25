@@ -17,70 +17,69 @@ import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
-
 const FEATURES = [
   {
     icon: "bot" as const,
     title: translate({ id: "studio.feature.agent.title", message: "AI Agent" }),
-    description: translate({ id: "studio.feature.agent.desc", message: "Describe what you want in plain language. The DeepAgent generates a complete .orb program with entities, traits, and pages." }),
+    description: translate({ id: "studio.feature.agent.desc", message: "Describe what you want in plain language. The DeepAgent generates a complete .orb program with entities, state machines, UI patterns, and pages." }),
   },
   {
-    icon: "palette" as const,
-    title: translate({ id: "studio.feature.editor.title", message: "Visual Editor" }),
-    description: translate({ id: "studio.feature.editor.desc", message: "Edit schemas visually with a drag-and-drop interface, or switch to code mode with a full Monaco editor." }),
+    icon: "table" as const,
+    title: translate({ id: "studio.feature.domain.title", message: "Domain Logic" }),
+    description: translate({ id: "studio.feature.domain.desc", message: "Define your entities, fields, and types in a structured view. Edit domain knowledge visually or switch to raw editor mode." }),
   },
   {
-    icon: "file-text" as const,
+    icon: "git-branch" as const,
     title: translate({ id: "studio.feature.git.title", message: "Git History" }),
-    description: translate({ id: "studio.feature.git.desc", message: "Every change is a commit. Browse the full version history, compare diffs, and roll back to any point." }),
+    description: translate({ id: "studio.feature.git.desc", message: "Every change is a commit. Browse version history, compare diffs between any two versions, and roll back to any point." }),
   },
   {
-    icon: "search" as const,
+    icon: "play-circle" as const,
     title: translate({ id: "studio.feature.preview.title", message: "Live Preview" }),
-    description: translate({ id: "studio.feature.preview.desc", message: "See your application running in real time as you build. Changes compile instantly in the background." }),
+    description: translate({ id: "studio.feature.preview.desc", message: "See your application running in real time as you build. Changes compile instantly in the background. No manual refresh." }),
   },
   {
-    icon: "zap" as const,
-    title: translate({ id: "studio.feature.deploy.title", message: "One-Click Deploy" }),
-    description: translate({ id: "studio.feature.deploy.desc", message: "Deploy to production with Firebase App Hosting. Frontend, backend, and database provisioned automatically." }),
+    icon: "network" as const,
+    title: translate({ id: "studio.feature.viz.title", message: "Orbital Visualization" }),
+    description: translate({ id: "studio.feature.viz.desc", message: "View your entire system visually using AVL. See entities, traits, transitions, and how everything connects." }),
   },
   {
-    icon: "users" as const,
-    title: translate({ id: "studio.feature.collab.title", message: "Team Collaboration" }),
-    description: translate({ id: "studio.feature.collab.desc", message: "Share projects with your team. Review changes, leave comments, and manage access with roles." }),
+    icon: "shield-check" as const,
+    title: translate({ id: "studio.feature.validation.title", message: "Compiler Verification" }),
+    description: translate({ id: "studio.feature.validation.desc", message: "The compiler checks every possible state your app can reach. Schema validation catches errors before you ship." }),
   },
 ];
 
 const SHOWCASE_ITEMS = [
   {
-    title: translate({ id: "studio.showcase.home", message: "Project Dashboard" }),
-    image: { src: "/img/screenshots/builder-home-page.png", alt: "Project dashboard" },
-    description: translate({ id: "studio.showcase.home.desc", message: "All your projects in one place. Create, manage, and deploy." }),
-  },
-  {
     title: translate({ id: "studio.showcase.agent", message: "AI Agent" }),
-    image: { src: "/img/screenshots/builder-agent.png", alt: "AI Agent chat" },
+    image: { src: "/img/screenshots/builder-ai-chat.png", alt: "AI Agent building an app" },
     description: translate({ id: "studio.showcase.agent.desc", message: "Describe what you want. The AI writes a complete .orb program." }),
   },
   {
-    title: translate({ id: "studio.showcase.detail", message: "Project Detail" }),
-    image: { src: "/img/screenshots/builder-detail-page.png", alt: "Project detail view" },
-    description: translate({ id: "studio.showcase.detail.desc", message: "Full project overview with schema, history, and deployment status." }),
+    title: translate({ id: "studio.showcase.domain", message: "Domain Logic" }),
+    image: { src: "/img/screenshots/builder-detail-build-domain-logic.png", alt: "Domain logic editor" },
+    description: translate({ id: "studio.showcase.domain.desc", message: "Define entities, fields, and types in a structured view." }),
   },
   {
-    title: translate({ id: "studio.showcase.build", message: "Schema Editor" }),
-    image: { src: "/img/screenshots/builder-detail-build-page.png", alt: "Schema editor" },
-    description: translate({ id: "studio.showcase.build.desc", message: "Edit .orb programs with full syntax highlighting and validation." }),
-  },
-  {
-    title: translate({ id: "studio.showcase.viz", message: "Orbital Visualization" }),
-    image: { src: "/img/screenshots/builder-detail-build-visualization-page.png", alt: "Orbital graph visualization" },
-    description: translate({ id: "studio.showcase.viz.desc", message: "Visualize entity relationships and state machine flows." }),
+    title: translate({ id: "studio.showcase.history", message: "Git History" }),
+    image: { src: "/img/screenshots/builder-detail-hq-history.png", alt: "Change history" },
+    description: translate({ id: "studio.showcase.history.desc", message: "Every change is a commit. Browse, compare, and roll back." }),
   },
   {
     title: translate({ id: "studio.showcase.preview", message: "Live Preview" }),
-    image: { src: "/img/screenshots/builder-detail-preview-page.png", alt: "Live preview" },
+    image: { src: "/img/screenshots/builder-detail-preview.png", alt: "Live preview" },
     description: translate({ id: "studio.showcase.preview.desc", message: "See your app running in real time as you build." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.viz", message: "Orbital Visualization" }),
+    image: { src: "/img/screenshots/builder-detail-build-visualization.png", alt: "Orbital AVL visualization" },
+    description: translate({ id: "studio.showcase.viz.desc", message: "View your entire system visually. Entities, traits, transitions." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.validation", message: "Compiler Verification" }),
+    image: { src: "/img/screenshots/builder-detail-build-validation.png", alt: "Schema validation" },
+    description: translate({ id: "studio.showcase.validation.desc", message: "The compiler checks every state before you ship." }),
   },
 ];
 
@@ -130,16 +129,6 @@ export default function StudioHome(): ReactNode {
                   </a>
                 </HStack>
               </VStack>
-            </Box>
-            <Box className="flex-1 max-w-[300px] hidden lg:flex">
-              <ThemedImage
-                alt="Orbital Trait"
-                sources={{
-                  light: useBaseUrl('/img/illustrations/Trait-light.svg'),
-                  dark: useBaseUrl('/img/illustrations/Trait-dark.svg'),
-                }}
-                className="w-full drop-shadow-2xl"
-              />
             </Box>
           </HStack>
         </Box>
@@ -200,14 +189,14 @@ export default function StudioHome(): ReactNode {
       </Box>
 
       {/* Features */}
-      <Box className="w-full bg-[var(--color-foreground)] text-[var(--color-background)]">
+      <Box className="w-full bg-[var(--color-surface)]">
         <Box className="site-container py-24">
           <VStack gap="lg" align="center" className="w-full">
             <VStack gap="sm" align="center">
-              <Typography variant="h2" className="text-[var(--color-background)]">
+              <Typography variant="h2">
                 <Translate id="studio.features.title">Everything You Need to Build</Translate>
               </Typography>
-              <Typography variant="body1" className="text-[var(--color-background)]/60">
+              <Typography variant="body1" color="muted">
                 <Translate id="studio.features.subtitle">A complete development environment powered by AI</Translate>
               </Typography>
             </VStack>
