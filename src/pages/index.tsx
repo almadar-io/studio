@@ -12,9 +12,8 @@ import {
   Icon,
   Card,
   SimpleGrid,
+  AnimatedReveal,
 } from "@almadar/ui/marketing";
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 
 const FEATURES = [
@@ -138,52 +137,33 @@ export default function StudioHome(): ReactNode {
       <Box className="w-full">
         <Box className="site-container py-24">
           <VStack gap="lg" align="center" className="w-full">
-            <VStack gap="sm" align="center">
-              <Typography variant="h2">
-                <Translate id="studio.steps.title">How It Works</Translate>
-              </Typography>
-              <Typography variant="body1" color="muted">
-                <Translate id="studio.steps.subtitle">From idea to production in three steps</Translate>
-              </Typography>
-            </VStack>
-            <Box className="w-full py-6">
-              <Box className="max-w-[600px] mx-auto">
-                <ThemedImage
-                  alt="Studio How it Works Loop"
-                  sources={{
-                    light: useBaseUrl('/img/illustrations/Studio-HowItWorks-Index-light.svg'),
-                    dark: useBaseUrl('/img/illustrations/Studio-HowItWorks-Index-dark.svg'),
-                  }}
-                  className="w-full drop-shadow-xl"
-                />
-              </Box>
-              <HStack gap="md" className="flex-col sm:flex-row mt-4">
-                <VStack gap="xs" align="center" className="w-full sm:w-1/3">
-                  <Typography variant="h4" align="center">
-                    <Translate id="studio.steps.describe.title">Describe</Translate>
-                  </Typography>
-                  <Typography variant="caption" color="muted" align="center">
-                    <Translate id="studio.steps.describe.desc">Tell the AI what you want to build in plain language. Describe your data, workflows, and UI.</Translate>
-                  </Typography>
-                </VStack>
-                <VStack gap="xs" align="center" className="w-full sm:w-1/3">
-                  <Typography variant="h4" align="center">
-                    <Translate id="studio.steps.generate.title">Prove</Translate>
-                  </Typography>
-                  <Typography variant="caption" color="muted" align="center">
-                    <Translate id="studio.steps.generate.desc">The AI agent writes a complete .orb program. The compiler validates every state before a single line of code runs.</Translate>
-                  </Typography>
-                </VStack>
-                <VStack gap="xs" align="center" className="w-full sm:w-1/3">
-                  <Typography variant="h4" align="center">
-                    <Translate id="studio.steps.deploy.title">Deploy</Translate>
-                  </Typography>
-                  <Typography variant="caption" color="muted" align="center">
-                    <Translate id="studio.steps.deploy.desc">One click to deploy. Your app is live on Firebase Hosting with a server backend.</Translate>
-                  </Typography>
-                </VStack>
-              </HStack>
-            </Box>
+            <AnimatedReveal animation="fade-in">
+              <VStack gap="sm" align="center">
+                <Typography variant="h2">
+                  <Translate id="studio.steps.title">How It Works</Translate>
+                </Typography>
+                <Typography variant="body1" color="muted">
+                  <Translate id="studio.steps.subtitle">From idea to production in three steps</Translate>
+                </Typography>
+              </VStack>
+            </AnimatedReveal>
+            <SimpleGrid cols={3} gap="lg">
+              {[
+                { icon: "message-square" as const, title: translate({ id: "studio.steps.describe.title", message: "Describe" }), description: translate({ id: "studio.steps.describe.desc", message: "Tell the AI what you want to build in plain language. Describe your data, workflows, and UI." }) },
+                { icon: "shield-check" as const, title: translate({ id: "studio.steps.generate.title", message: "Prove" }), description: translate({ id: "studio.steps.generate.desc", message: "The AI agent writes a complete .orb program. The compiler validates every state before a single line of code runs." }) },
+                { icon: "rocket" as const, title: translate({ id: "studio.steps.deploy.title", message: "Deploy" }), description: translate({ id: "studio.steps.deploy.desc", message: "One click to deploy. Your app is live on Firebase Hosting with a server backend." }) },
+              ].map((step, i) => (
+                <AnimatedReveal key={step.title} animation="fade-up" delay={i * 100} className="h-full">
+                  <Card className="p-6 h-full">
+                    <VStack gap="sm">
+                      <Icon name={step.icon} size={28} className="text-[var(--color-primary)]" />
+                      <Typography variant="h4">{step.title}</Typography>
+                      <Typography variant="body2" color="muted">{step.description}</Typography>
+                    </VStack>
+                  </Card>
+                </AnimatedReveal>
+              ))}
+            </SimpleGrid>
           </VStack>
         </Box>
       </Box>
@@ -192,23 +172,27 @@ export default function StudioHome(): ReactNode {
       <Box className="w-full bg-[var(--color-surface)]">
         <Box className="site-container py-24">
           <VStack gap="lg" align="center" className="w-full">
-            <VStack gap="sm" align="center">
-              <Typography variant="h2">
-                <Translate id="studio.features.title">Everything You Need to Build</Translate>
-              </Typography>
-              <Typography variant="body1" color="muted">
-                <Translate id="studio.features.subtitle">A complete development environment powered by AI</Translate>
-              </Typography>
-            </VStack>
+            <AnimatedReveal animation="fade-in">
+              <VStack gap="sm" align="center">
+                <Typography variant="h2">
+                  <Translate id="studio.features.title">Everything You Need to Build</Translate>
+                </Typography>
+                <Typography variant="body1" color="muted">
+                  <Translate id="studio.features.subtitle">A complete development environment powered by AI</Translate>
+                </Typography>
+              </VStack>
+            </AnimatedReveal>
             <SimpleGrid cols={3} gap="lg">
-              {FEATURES.map((f) => (
-                <Card key={f.title} className="p-6">
-                  <VStack gap="sm">
-                    <Icon name={f.icon} size={28} className="text-[var(--color-primary)]" />
-                    <Typography variant="h4">{f.title}</Typography>
-                    <Typography variant="body2" color="muted">{f.description}</Typography>
-                  </VStack>
-                </Card>
+              {FEATURES.map((f, i) => (
+                <AnimatedReveal key={f.title} animation="fade-up" delay={i * 100} className="h-full">
+                  <Card className="p-6 h-full">
+                    <VStack gap="sm">
+                      <Icon name={f.icon} size={28} className="text-[var(--color-primary)]" />
+                      <Typography variant="h4">{f.title}</Typography>
+                      <Typography variant="body2" color="muted">{f.description}</Typography>
+                    </VStack>
+                  </Card>
+                </AnimatedReveal>
               ))}
             </SimpleGrid>
           </VStack>
@@ -222,30 +206,34 @@ export default function StudioHome(): ReactNode {
       <Box className="w-full">
         <Box className="site-container py-24">
           <VStack gap="lg" align="center" className="w-full">
-            <VStack gap="sm" align="center">
-              <Typography variant="h2">
-                <Translate id="studio.showcase.title">See It in Action</Translate>
-              </Typography>
-              <Typography variant="body1" color="muted">
-                <Translate id="studio.showcase.subtitle">Real screenshots from Almadar Studio</Translate>
-              </Typography>
-            </VStack>
+            <AnimatedReveal animation="fade-in">
+              <VStack gap="sm" align="center">
+                <Typography variant="h2">
+                  <Translate id="studio.showcase.title">See It in Action</Translate>
+                </Typography>
+                <Typography variant="body1" color="muted">
+                  <Translate id="studio.showcase.subtitle">Real screenshots from Almadar Studio</Translate>
+                </Typography>
+              </VStack>
+            </AnimatedReveal>
             <SimpleGrid cols={3} gap="lg">
-              {SHOWCASE_ITEMS.map((item) => (
-                <Card key={item.title} className="overflow-hidden">
-                  <Box
-                    className="w-full aspect-video bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${item.image.src})` }}
-                    role="img"
-                    aria-label={item.image.alt}
-                  />
-                  <Box className="p-5">
-                    <VStack gap="xs">
-                      <Typography variant="h4">{item.title}</Typography>
-                      <Typography variant="caption" color="muted">{item.description}</Typography>
-                    </VStack>
-                  </Box>
-                </Card>
+              {SHOWCASE_ITEMS.map((item, i) => (
+                <AnimatedReveal key={item.title} animation="scale-up" delay={i * 100}>
+                  <Card className="overflow-hidden">
+                    <Box
+                      className="w-full aspect-video bg-cover bg-center bg-no-repeat"
+                      style={{ backgroundImage: `url(${item.image.src})` }}
+                      role="img"
+                      aria-label={item.image.alt}
+                    />
+                    <Box className="p-5">
+                      <VStack gap="xs">
+                        <Typography variant="h4">{item.title}</Typography>
+                        <Typography variant="caption" color="muted">{item.description}</Typography>
+                      </VStack>
+                    </Box>
+                  </Card>
+                </AnimatedReveal>
               ))}
             </SimpleGrid>
           </VStack>
@@ -256,23 +244,27 @@ export default function StudioHome(): ReactNode {
       <Box className="w-full bg-[var(--color-surface)]">
         <Box className="site-container py-24">
           <VStack gap="lg" align="center" className="w-full">
-            <VStack gap="sm" align="center">
-              <Typography variant="h2">
-                <Translate id="studio.loop.title">Edit at Any Level</Translate>
-              </Typography>
-              <Typography variant="body1" color="muted">
-                <Translate id="studio.loop.subtitle">Change the description, the .orb program, or the generated code. Fixes propagate across layers. The AI can go from English to Orb, from Orb to code, and from code back to a readable spec.</Translate>
-              </Typography>
-            </VStack>
+            <AnimatedReveal animation="fade-in">
+              <VStack gap="sm" align="center">
+                <Typography variant="h2">
+                  <Translate id="studio.loop.title">Edit at Any Level</Translate>
+                </Typography>
+                <Typography variant="body1" color="muted">
+                  <Translate id="studio.loop.subtitle">Change the description, the .orb program, or the generated code. Fixes propagate across layers. The AI can go from English to Orb, from Orb to code, and from code back to a readable spec.</Translate>
+                </Typography>
+              </VStack>
+            </AnimatedReveal>
             <SimpleGrid cols={3} gap="lg">
-              {LOOP_ITEMS.map((item) => (
-                <Card key={item.title} className="p-6">
-                  <VStack gap="sm">
-                    <Icon name={item.icon} size={28} className="text-[var(--color-primary)]" />
-                    <Typography variant="h4">{item.title}</Typography>
-                    <Typography variant="body2" color="muted">{item.description}</Typography>
-                  </VStack>
-                </Card>
+              {LOOP_ITEMS.map((item, i) => (
+                <AnimatedReveal key={item.title} animation="fade-up" delay={i * 100} className="h-full">
+                  <Card className="p-6 h-full">
+                    <VStack gap="sm">
+                      <Icon name={item.icon} size={28} className="text-[var(--color-primary)]" />
+                      <Typography variant="h4">{item.title}</Typography>
+                      <Typography variant="body2" color="muted">{item.description}</Typography>
+                    </VStack>
+                  </Card>
+                </AnimatedReveal>
               ))}
             </SimpleGrid>
           </VStack>
@@ -280,17 +272,19 @@ export default function StudioHome(): ReactNode {
       </Box>
 
       {/* CTA */}
-      <Box className="w-full bg-gradient-to-b from-[var(--color-primary)]/5 to-[var(--color-secondary)]/5">
-        <Box className="site-container py-24">
-          <VStack gap="lg" align="center">
-            <Typography variant="h2">{translate({ id: "studio.cta.title", message: "Start Building. It's Free." })}</Typography>
-            <Typography variant="body1" color="muted">{translate({ id: "studio.cta.subtitle", message: "Create your first application in minutes. No credit card required." })}</Typography>
-            <a href="https://kflow-builder-app.web.app/">
-              <Button variant="primary" size="lg">{translate({ id: "studio.cta.button", message: "Open Studio" })}</Button>
-            </a>
-          </VStack>
+      <AnimatedReveal animation="fade-in">
+        <Box className="w-full bg-gradient-to-b from-[var(--color-primary)]/5 to-[var(--color-secondary)]/5">
+          <Box className="site-container py-24">
+            <VStack gap="lg" align="center">
+              <Typography variant="h2">{translate({ id: "studio.cta.title", message: "Start Building. It's Free." })}</Typography>
+              <Typography variant="body1" color="muted">{translate({ id: "studio.cta.subtitle", message: "Create your first application in minutes. No credit card required." })}</Typography>
+              <a href="https://kflow-builder-app.web.app/">
+                <Button variant="primary" size="lg">{translate({ id: "studio.cta.button", message: "Open Studio" })}</Button>
+              </a>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
+      </AnimatedReveal>
     </Layout>
   );
 }
