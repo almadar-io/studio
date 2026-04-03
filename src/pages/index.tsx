@@ -103,7 +103,7 @@ const LOOP_ITEMS = [
 export default function StudioHome(): ReactNode {
   return (
     <Layout
-      title={translate({ id: "studio.meta.title", message: "Build Software with AI" })}
+      title={translate({ id: "studio.meta.title", message: "One builder. Every role. Ship with confidence." })}
       description={translate({ id: "studio.meta.description", message: "Almadar Studio - Describe what you want, get a working application. AI-powered software builder." })}
     >
       {/* Hero */}
@@ -118,7 +118,7 @@ export default function StudioHome(): ReactNode {
                   {translate({ id: "studio.hero.title.prefix", message: "Build Software" })}{" "}
                   <Box as="span" className="text-[var(--color-primary)]">{translate({ id: "studio.hero.title.accent", message: "with AI" })}</Box>
                 </Typography>
-                <Typography variant="body1" color="muted">{translate({ id: "studio.hero.subtitle", message: "Describe what you want. Get a working application. Edit, preview, deploy." })}</Typography>
+                <Typography variant="body1" color="muted">{translate({ id: "studio.hero.subtitle", message: "One builder. Every role. Ship with confidence." })}</Typography>
                 <HStack gap="md">
                   <a href="https://kflow-builder-app.web.app/">
                     <Button variant="primary" size="lg">{translate({ id: "studio.hero.cta.start", message: "Start Building" })}</Button>
