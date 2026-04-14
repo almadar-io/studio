@@ -13,32 +13,32 @@ import {
 
 const FEATURES = [
   {
-    screenshot: "/img/screenshots/builder-ai-chat.png",
+    screenshot: "/img/screenshots/builder-ai-chat.jpg",
     title: translate({ id: "features.agent.title", message: "AI Agent" }),
     description: translate({ id: "features.agent.desc", message: "Describe what you want in plain language. The DeepAgent generates a complete .orb program with entities, state machines, UI patterns, and pages." }),
   },
   {
-    screenshot: "/img/screenshots/builder-detail-build-domain-logic.png",
+    screenshot: "/img/screenshots/builder-domain-logic.jpg",
     title: translate({ id: "features.domain.title", message: "Domain Logic" }),
     description: translate({ id: "features.domain.desc", message: "Define your entities, fields, and types in a structured view. Edit domain knowledge visually or switch to raw editor mode." }),
   },
   {
-    screenshot: "/img/screenshots/builder-detail-hq-history.png",
+    screenshot: "/img/screenshots/builder-workspace.jpg",
     title: translate({ id: "features.git.title", message: "Git History" }),
     description: translate({ id: "features.git.desc", message: "Every change is a commit. Browse version history, compare diffs between any two versions, and roll back to any point." }),
   },
   {
-    screenshot: "/img/screenshots/builder-detail-preview.png",
+    screenshot: "/img/screenshots/builder-preview-dashboard.jpg",
     title: translate({ id: "features.preview.title", message: "Live Preview" }),
     description: translate({ id: "features.preview.desc", message: "See your application running in real time as you build. Changes compile instantly in the background. No manual refresh." }),
   },
   {
-    screenshot: "/img/screenshots/builder-detail-build-visualization.png",
+    screenshot: "/img/screenshots/builder-build-schema.jpg",
     title: translate({ id: "features.visualization.title", message: "Orbital Visualization" }),
     description: translate({ id: "features.visualization.desc", message: "View your entire system visually using AVL. See entities, traits, transitions, and how everything connects at a glance." }),
   },
   {
-    screenshot: "/img/screenshots/builder-detail-build-validation.png",
+    screenshot: "/img/screenshots/builder-validation.jpg",
     title: translate({ id: "features.validation.title", message: "Compiler Verification" }),
     description: translate({ id: "features.validation.desc", message: "The compiler checks every possible state your app can reach. Schema validation catches errors before you ship, not after." }),
   },

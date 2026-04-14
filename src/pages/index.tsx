@@ -52,32 +52,32 @@ const FEATURES = [
 const SHOWCASE_ITEMS = [
   {
     title: translate({ id: "studio.showcase.agent", message: "AI Agent" }),
-    image: { src: "/img/screenshots/builder-ai-chat.png", alt: "AI Agent building an app" },
+    image: { src: "/img/screenshots/builder-ai-chat.jpg", alt: "AI Agent building an app" },
     description: translate({ id: "studio.showcase.agent.desc", message: "Describe what you want. The AI writes a complete .orb program." }),
   },
   {
     title: translate({ id: "studio.showcase.domain", message: "Domain Logic" }),
-    image: { src: "/img/screenshots/builder-detail-build-domain-logic.png", alt: "Domain logic editor" },
+    image: { src: "/img/screenshots/builder-domain-logic.jpg", alt: "Domain logic editor" },
     description: translate({ id: "studio.showcase.domain.desc", message: "Define entities, fields, and types in a structured view." }),
   },
   {
     title: translate({ id: "studio.showcase.history", message: "Git History" }),
-    image: { src: "/img/screenshots/builder-detail-hq-history.png", alt: "Change history" },
+    image: { src: "/img/screenshots/builder-workspace.jpg", alt: "Project workspace" },
     description: translate({ id: "studio.showcase.history.desc", message: "Every change is a commit. Browse, compare, and roll back." }),
   },
   {
     title: translate({ id: "studio.showcase.preview", message: "Live Preview" }),
-    image: { src: "/img/screenshots/builder-detail-preview.png", alt: "Live preview" },
+    image: { src: "/img/screenshots/builder-preview-dashboard.jpg", alt: "Live preview dashboard" },
     description: translate({ id: "studio.showcase.preview.desc", message: "See your app running in real time as you build." }),
   },
   {
     title: translate({ id: "studio.showcase.viz", message: "Orbital Visualization" }),
-    image: { src: "/img/screenshots/builder-detail-build-visualization.png", alt: "Orbital AVL visualization" },
+    image: { src: "/img/screenshots/builder-build-schema.jpg", alt: "Orbital build view with schema" },
     description: translate({ id: "studio.showcase.viz.desc", message: "View your entire system visually. Entities, traits, transitions." }),
   },
   {
     title: translate({ id: "studio.showcase.validation", message: "Compiler Verification" }),
-    image: { src: "/img/screenshots/builder-detail-build-validation.png", alt: "Schema validation" },
+    image: { src: "/img/screenshots/builder-validation.jpg", alt: "Schema validation" },
     description: translate({ id: "studio.showcase.validation.desc", message: "The compiler checks every state before you ship." }),
   },
 ];
