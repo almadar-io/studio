@@ -19,66 +19,66 @@ import { OrbitalHeroBackground } from "../components/OrbitalHeroBackground";
 const FEATURES = [
   {
     icon: "bot" as const,
-    title: translate({ id: "studio.feature.agent.title", message: "AI Agent" }),
-    description: translate({ id: "studio.feature.agent.desc", message: "Describe what you want in plain language. The DeepAgent generates a complete .orb program with entities, state machines, UI patterns, and pages." }),
+    title: translate({ id: "studio.feature.agent.title", message: "Describe and Build" }),
+    description: translate({ id: "studio.feature.agent.desc", message: "Type what you want in plain language. The AI agent breaks down your idea, builds the data model, creates workflows, and generates the UI — you watch it happen on the canvas." }),
   },
   {
-    icon: "table" as const,
-    title: translate({ id: "studio.feature.domain.title", message: "Domain Logic" }),
-    description: translate({ id: "studio.feature.domain.desc", message: "Define your entities, fields, and types in a structured view. Edit domain knowledge visually or switch to raw editor mode." }),
+    icon: "layout" as const,
+    title: translate({ id: "studio.feature.canvas.title", message: "Visual Canvas" }),
+    description: translate({ id: "studio.feature.canvas.desc", message: "See your entire application on a live canvas. Each component shows its data, states, and screens. Double-click to drill into any part and edit it directly." }),
   },
   {
-    icon: "git-branch" as const,
-    title: translate({ id: "studio.feature.git.title", message: "Git History" }),
-    description: translate({ id: "studio.feature.git.desc", message: "Every change is a commit. Browse version history, compare diffs between any two versions, and roll back to any point." }),
+    icon: "palette" as const,
+    title: translate({ id: "studio.feature.edit.title", message: "Drag-and-Drop UI" }),
+    description: translate({ id: "studio.feature.edit.desc", message: "Open the pattern palette and drag UI components onto any screen. Edit properties in the inspector. The AI can help — ask it to add a progress bar or rename a button." }),
   },
   {
-    icon: "play-circle" as const,
+    icon: "eye" as const,
     title: translate({ id: "studio.feature.preview.title", message: "Live Preview" }),
-    description: translate({ id: "studio.feature.preview.desc", message: "See your application running in real time as you build. Changes compile instantly in the background. No manual refresh." }),
-  },
-  {
-    icon: "network" as const,
-    title: translate({ id: "studio.feature.viz.title", message: "Orbital Visualization" }),
-    description: translate({ id: "studio.feature.viz.desc", message: "View your entire system visually using AVL. See entities, traits, transitions, and how everything connects." }),
+    description: translate({ id: "studio.feature.preview.desc", message: "See your application rendered live as it's built. Forms, data grids, navigation — everything updates in real time. No manual refresh, no waiting for builds." }),
   },
   {
     icon: "shield-check" as const,
-    title: translate({ id: "studio.feature.validation.title", message: "Compiler Verification" }),
-    description: translate({ id: "studio.feature.validation.desc", message: "The compiler checks every possible state your app can reach. Schema validation catches errors before you ship." }),
+    title: translate({ id: "studio.feature.validation.title", message: "Automatic Verification" }),
+    description: translate({ id: "studio.feature.validation.desc", message: "Every change is checked automatically. The compiler catches missing fields, broken workflows, and invalid states before you deploy — not after." }),
+  },
+  {
+    icon: "rocket" as const,
+    title: translate({ id: "studio.feature.deploy.title", message: "One-Click Deploy" }),
+    description: translate({ id: "studio.feature.deploy.desc", message: "Hit deploy and your app goes live. Validation, compilation, build, and hosting — handled in one step. Get a live URL in under 20 seconds." }),
   },
 ];
 
 const SHOWCASE_ITEMS = [
   {
-    title: translate({ id: "studio.showcase.agent", message: "AI Agent" }),
-    image: { src: "/img/screenshots/builder-ai-chat.jpg", alt: "AI Agent building an app" },
-    description: translate({ id: "studio.showcase.agent.desc", message: "Describe what you want. The AI writes a complete .orb program." }),
+    title: translate({ id: "studio.showcase.home", message: "Your Projects" }),
+    image: { src: "/img/screenshots/builder-home.png", alt: "Builder home with projects, suggestions, and activity feed" },
+    description: translate({ id: "studio.showcase.home.desc", message: "All your projects in one place. Pick a suggestion or describe something new." }),
   },
   {
-    title: translate({ id: "studio.showcase.domain", message: "Domain Logic" }),
-    image: { src: "/img/screenshots/builder-domain-logic.jpg", alt: "Domain logic editor" },
-    description: translate({ id: "studio.showcase.domain.desc", message: "Define entities, fields, and types in a structured view." }),
+    title: translate({ id: "studio.showcase.agent", message: "Watch It Build" }),
+    image: { src: "/img/screenshots/builder-agent-building.png", alt: "AI agent building an app on the canvas" },
+    description: translate({ id: "studio.showcase.agent.desc", message: "The agent breaks down your idea and builds it step by step on the canvas." }),
   },
   {
-    title: translate({ id: "studio.showcase.history", message: "Git History" }),
-    image: { src: "/img/screenshots/builder-workspace.jpg", alt: "Project workspace" },
-    description: translate({ id: "studio.showcase.history.desc", message: "Every change is a commit. Browse, compare, and roll back." }),
+    title: translate({ id: "studio.showcase.canvas", message: "Visual Canvas" }),
+    image: { src: "/img/screenshots/builder-canvas.png", alt: "Canvas with pattern palette and screen previews" },
+    description: translate({ id: "studio.showcase.canvas.desc", message: "Drill into any screen. Drag patterns from the palette. See changes instantly." }),
+  },
+  {
+    title: translate({ id: "studio.showcase.edit", message: "Edit UI Directly" }),
+    image: { src: "/img/screenshots/builder-edit-ui.png", alt: "Editing UI properties in the inspector" },
+    description: translate({ id: "studio.showcase.edit.desc", message: "Select any element and edit its properties. Or ask the agent to make the change for you." }),
   },
   {
     title: translate({ id: "studio.showcase.preview", message: "Live Preview" }),
-    image: { src: "/img/screenshots/builder-preview-dashboard.jpg", alt: "Live preview dashboard" },
-    description: translate({ id: "studio.showcase.preview.desc", message: "See your app running in real time as you build." }),
+    image: { src: "/img/screenshots/builder-preview.png", alt: "Completed build with live orbital previews" },
+    description: translate({ id: "studio.showcase.preview.desc", message: "Forms, data grids, and navigation — rendered live as the agent builds." }),
   },
   {
-    title: translate({ id: "studio.showcase.viz", message: "Orbital Visualization" }),
-    image: { src: "/img/screenshots/builder-build-schema.jpg", alt: "Orbital build view with schema" },
-    description: translate({ id: "studio.showcase.viz.desc", message: "View your entire system visually. Entities, traits, transitions." }),
-  },
-  {
-    title: translate({ id: "studio.showcase.validation", message: "Compiler Verification" }),
-    image: { src: "/img/screenshots/builder-validation.jpg", alt: "Schema validation" },
-    description: translate({ id: "studio.showcase.validation.desc", message: "The compiler checks every state before you ship." }),
+    title: translate({ id: "studio.showcase.deploy", message: "Deploy in Seconds" }),
+    image: { src: "/img/screenshots/builder-deploy.png", alt: "Deploy complete with live URL" },
+    description: translate({ id: "studio.showcase.deploy.desc", message: "One click. Validated, compiled, built, and live — with a URL you can share." }),
   },
 ];
 

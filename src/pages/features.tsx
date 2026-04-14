@@ -13,34 +13,34 @@ import {
 
 const FEATURES = [
   {
-    screenshot: "/img/screenshots/builder-ai-chat.jpg",
-    title: translate({ id: "features.agent.title", message: "AI Agent" }),
-    description: translate({ id: "features.agent.desc", message: "Describe what you want in plain language. The DeepAgent generates a complete .orb program with entities, state machines, UI patterns, and pages." }),
+    screenshot: "/img/screenshots/builder-home.png",
+    title: translate({ id: "features.home.title", message: "Describe and Build" }),
+    description: translate({ id: "features.home.desc", message: "Type what you want — a patient intake system, an e-commerce store, a booking app. The AI agent breaks it down, builds the data model, creates workflows, and generates the UI while you watch." }),
   },
   {
-    screenshot: "/img/screenshots/builder-domain-logic.jpg",
-    title: translate({ id: "features.domain.title", message: "Domain Logic" }),
-    description: translate({ id: "features.domain.desc", message: "Define your entities, fields, and types in a structured view. Edit domain knowledge visually or switch to raw editor mode." }),
+    screenshot: "/img/screenshots/builder-agent-building.png",
+    title: translate({ id: "features.agent.title", message: "Watch It Come Together" }),
+    description: translate({ id: "features.agent.desc", message: "The agent works through your app step by step: data model first, then workflows, then screens. You see each piece appear on the canvas in real time, with a progress timeline showing where things stand." }),
   },
   {
-    screenshot: "/img/screenshots/builder-workspace.jpg",
-    title: translate({ id: "features.git.title", message: "Git History" }),
-    description: translate({ id: "features.git.desc", message: "Every change is a commit. Browse version history, compare diffs between any two versions, and roll back to any point." }),
+    screenshot: "/img/screenshots/builder-canvas.png",
+    title: translate({ id: "features.canvas.title", message: "Visual Canvas" }),
+    description: translate({ id: "features.canvas.desc", message: "Your entire application on one canvas. See every screen, every data flow, every connection. Double-click to drill into any part. Open the pattern palette to drag UI components directly onto screens." }),
   },
   {
-    screenshot: "/img/screenshots/builder-preview-dashboard.jpg",
+    screenshot: "/img/screenshots/builder-edit-ui.png",
+    title: translate({ id: "features.edit.title", message: "Edit UI Directly" }),
+    description: translate({ id: "features.edit.desc", message: "Select any screen element and edit its properties in the inspector — labels, layout, styles. Or just ask the agent: \"add a progress bar to each step\" and it makes the change for you." }),
+  },
+  {
+    screenshot: "/img/screenshots/builder-preview.png",
     title: translate({ id: "features.preview.title", message: "Live Preview" }),
-    description: translate({ id: "features.preview.desc", message: "See your application running in real time as you build. Changes compile instantly in the background. No manual refresh." }),
+    description: translate({ id: "features.preview.desc", message: "See your application rendered live as it's being built. Forms populate, data grids fill in, navigation works — no waiting for builds or manual refreshes." }),
   },
   {
-    screenshot: "/img/screenshots/builder-build-schema.jpg",
-    title: translate({ id: "features.visualization.title", message: "Orbital Visualization" }),
-    description: translate({ id: "features.visualization.desc", message: "View your entire system visually using AVL. See entities, traits, transitions, and how everything connects at a glance." }),
-  },
-  {
-    screenshot: "/img/screenshots/builder-validation.jpg",
-    title: translate({ id: "features.validation.title", message: "Compiler Verification" }),
-    description: translate({ id: "features.validation.desc", message: "The compiler checks every possible state your app can reach. Schema validation catches errors before you ship, not after." }),
+    screenshot: "/img/screenshots/builder-deploy.png",
+    title: translate({ id: "features.deploy.title", message: "One-Click Deploy" }),
+    description: translate({ id: "features.deploy.desc", message: "Hit deploy and your app goes live. The compiler validates everything, generates production code, builds it, and pushes to hosting. You get a live URL in under 20 seconds." }),
   },
 ];
 
