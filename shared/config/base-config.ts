@@ -69,6 +69,18 @@ export function createConfig(opts: SiteConfig): Config {
     markdown: { hooks: { onBrokenMarkdownLinks: "warn", onBrokenMarkdownImages: "warn" } },
     future: { v4: true },
 
+    clientModules: [
+      path.resolve(__dirname, '../theme/analytics.ts'),
+    ],
+
+    headTags: [
+      {
+        tagName: 'script',
+        attributes: {},
+        innerHTML: `window.__ALMADAR_ANALYTICS_ENDPOINT__=${JSON.stringify(process.env.ANALYTICS_ENDPOINT || 'https://almadar-analytics--kflow-b3a39.europe-west4.hosted.app/e')};`,
+      },
+    ],
+
     i18n: {
       defaultLocale: "en",
       locales: ["en", "ar", "sl"],
